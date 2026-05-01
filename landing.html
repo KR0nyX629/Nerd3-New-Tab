@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nerd3 New Tab</title>
+<meta name="description" content="Nerd3 New Tab is a minimal browser new tab extension with Pomodoro focus, quick links, notes, tasks, reminders and theme settings.">
+<style>
+:root { --bg:#090b10; --panel:#11161f; --accent:#8ab4f8; --text:#e8edf4; --muted:#8b96a8; --border:#222b39; }
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;padding:0;min-height:100%;font-family:"JetBrains Mono","Fira Code","Segoe UI Mono",monospace;background:radial-gradient(circle at top, rgba(138,180,248,.12) 0%, transparent 38%), #090b10;color:var(--text);}
+body{background-attachment:fixed;}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 20% 15%, rgba(138,180,248,.08) 0%, transparent 35%), radial-gradient(circle at 80% 80%, rgba(255,255,255,.04) 0%, transparent 22%);pointer-events:none;}
+body::after{content:"";position:fixed;inset:0;background:url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'120\' viewBox=\'0 0 120 120\'%3E%3Ccircle cx=\'60\' cy=\'60\' r=\'1\' fill=\'rgba(138,180,248,0.08)\'/%3E%3C/svg%3E') repeat;opacity:.08;pointer-events:none;}
+body,button,input,textarea,select{color:var(--text);font-family:inherit;}
+.container{width:min(1100px,calc(100% - 40px));margin:0 auto;padding:32px 0 48px;position:relative;z-index:1;}
+.header{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:44px;}
+.brand{display:flex;flex-direction:column;gap:14px;}
+.badge{display:inline-flex;padding:10px 16px;border-radius:999px;background:rgba(138,180,248,.12);color:var(--accent);font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;}
+.title{margin:0;font-size:clamp(2.8rem,6vw,4.2rem);line-height:1.02;max-width:760px;}
+.lead{margin:0;max-width:720px;color:var(--muted);font-size:1.05rem;line-height:1.8;}
+.button{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;background:var(--accent);color:#05070c;text-decoration:none;font-weight:700;transition:transform .2s ease,filter .2s ease;}
+.button:hover{transform:translateY(-1px);filter:brightness(1.08);}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start;}
+.hero-image{margin-top:24px;}
+.image-panel{padding:20px;}
+.preview-image{width:100%;border-radius:20px;border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 45px rgba(0,0,0,.22);}
+.panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:28px;backdrop-filter:blur(20px);box-shadow:0 40px 100px rgba(0,0,0,.24);}
+.panel-label{margin:0 0 18px;font-size:.92rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);}
+.feature-list{margin:0;padding:0;list-style:none;display:grid;gap:14px;font-size:.98rem;color:#cfd8ff;}
+.feature-list li{display:flex;gap:12px;align-items:flex-start;}
+.feature-list li::before{content:'▹';color:var(--accent);line-height:1.2;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:32px;}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:26px;}
+.card h3{margin:0 0 14px;font-size:1rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);}
+.card p{margin:0;color:#c3cbdc;line-height:1.75;font-size:.95rem;}
+.caption{display:block;margin-top:10px;color:var(--muted);font-size:.88rem;}
+.gradient-band{margin:48px 0 0;height:1px;background:linear-gradient(90deg,transparent,rgba(138,180,248,.35),transparent);border:none;}
+.footer{margin-top:32px;padding-top:28px;color:var(--muted);font-size:.92rem;text-align:center;}
+@media(max-width:860px){.hero{grid-template-columns:1fr;}.header{align-items:flex-start;}.feature-list li{font-size:.97rem;}}
+</style>
+</head>
+<body>
+<div class="container">
+<header class="header">
+<div class="brand">
+<span class="badge">Nerd3 New Tab</span>
+<h1 class="title">A sharp, minimal new tab built for focus, links, notes and quick routines.</h1>
+<p class="lead">Launch a cleaner browser start page with Pomodoro focus, quick links, a brain dump, task reminders and easy theme controls — all styled with the same Nerd3 aesthetic.</p>
+</div>
+<a class="button" href="https://github.com/KR0nyX629/Nerd3-New-Tab" target="_blank" rel="noopener noreferrer">Open GitHub repo</a>
+</header>
+<section class="hero">
+<div>
+<div class="panel">
+<p class="panel-label">What it includes</p>
+<ul class="feature-list">
+<li>Pomodoro timer with focus/break cycles</li>
+<li>Fast quick links and link manager</li>
+<li>Brain dump note capture</li>
+<li>Task list with reminders</li>
+<li>Theme accent and background control</li>
+</ul>
+</div>
+</div>
+<div class="panel">
+<p class="panel-label">Minimal by design</p>
+<p style="margin:0;color:#cfd8ff;line-height:1.8;font-size:1rem;">Clean layout, subtle glassy panels, and a calm dark visual style keep distractions low while the tools stay accessible.</p>
+</div>
+</section>
+<section class="hero-image">
+<div class="panel image-panel">
+<p class="panel-label">Preview</p>
+<img src="landing.png" alt="Nerd3 New Tab preview" class="preview-image">
+</div>
+</section>
+<hr class="gradient-band">
+<div class="grid">
+<div class="card">
+<h3>Focus flow</h3>
+<p>Start the timer, switch modes, and see completed cycles — the extension keeps your attention moving without clutter.</p>
+</div>
+<div class="card">
+<h3>Quick access</h3>
+<p>Create a shortcut panel for your most-used pages and open them instantly from the new tab view.</p>
+</div>
+<div class="card">
+<h3>Notes and ideas</h3>
+<p>Use the built-in brain dump area to capture thoughts, links, reminders and ideas while you browse.</p>
+</div>
+<div class="card">
+<h3>Custom settings</h3>
+<p>Adjust the accent color, change the background, and personalize the greeting to match your workflow.</p>
+</div>
+</div>
+<footer class="footer">Built in the same JetBrains Mono-style interface as Nerd3, designed to stay minimal, functional, and ready for daily use.</footer>
+</div>
+</body>
+</html>
